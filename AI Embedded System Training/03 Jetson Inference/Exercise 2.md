@@ -1,7 +1,7 @@
 # Exercise 2
 
 ## Object Detection Customization Example
-
+Source code: https://github.com/sebit-world/jetson-inference/blob/training/data/codes/detectnet_relay.py 
 ```bash
 cd /jetson-inference/data/codes
 
