@@ -6,11 +6,14 @@
 pip3 install pyserial
 ```
 
-## Git clone the sample code
+## Copy the sample code
+The sample code (relay.py) can be copied from this link:
 
+https://github.com/sebit-world/edu/blob/main/AI%20Embedded%20System%20Training/02%20Relay/relay.py
+
+Use gedit to copy & paste the code to your local machine.
 ```bash
-git clone https://gist.github.com/cf48d42972ea9cad15215eff4915c97a.git training
-cd training
+gedit relay.py
 ```
 
 ## Run the python script with sudo
