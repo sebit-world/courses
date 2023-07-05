@@ -13,13 +13,13 @@ LOWER_BOUND = 1
 
 
 def to_hex_cmd(pin, on):
-    pin_base = int("A0", 16) + pin
-    return f'A0{"%0.2X" % pin}{"%0.2X" % int(on)}{"%0.2X" % (pin_base + int(on))}'
+	pin_base = int("A0", 16) + pin
+	return f'A0{"%0.2X" % pin}{"%0.2X" % int(on)}{"%0.2X" % (pin_base + int(on))}'
 
 
 def set_pin(device, pin, on, port=9600):
     with serial.Serial(device, port) as ser:
-        ser.write(bytes.fromhex(to_hex_cmd(pin, on)))
+    	ser.write(bytes.fromhex(to_hex_cmd(pin, on)))
 
 def get_relay_device():
 	ports = ls_ports.comports()
