@@ -13,23 +13,23 @@ LOWER_BOUND = 1
 
 
 def to_hex_cmd(pin, on):
-	pin_base = int("A0", 16) + pin
-	return f'A0{"%0.2X" % pin}{"%0.2X" % int(on)}{"%0.2X" % (pin_base + int(on))}'
+    pin_base = int("A0", 16) + pin
+    return f'A0{"%0.2X" % pin}{"%0.2X" % int(on)}{"%0.2X" % (pin_base + int(on))}'
 
 
 def set_pin(device, pin, on, port=9600):
     with serial.Serial(device, port) as ser:
-    	ser.write(bytes.fromhex(to_hex_cmd(pin, on)))
+        ser.write(bytes.fromhex(to_hex_cmd(pin, on)))
 
 def get_relay_device():
-	ports = ls_ports.comports()
-	for port in ports:
-		if port.location:
-			return port.device
+    ports = ls_ports.comports()
+    for port in ports:
+        if port.location:
+            return port.device
 
 def set_relay(device, *channels):
-	for idx, on in enumerate(channels, 1):
-		set_pin(device, idx, on)
+    for idx, on in enumerate(channels, 1):
+        set_pin(device, idx, on)
 
 # parse the command line
 parser = argparse.ArgumentParser(description="Locate objects in a live camera stream using an object detection DNN.")
@@ -41,11 +41,11 @@ parser.add_argument("--overlay", type=str, default="box,labels,conf", help="dete
 parser.add_argument("--threshold", type=float, default=0.5, help="minimum detection threshold to use") 
 
 try:
-	opt = parser.parse_known_args()[0]
+    opt = parser.parse_known_args()[0]
 except:
-	print("")
-	parser.print_help()
-	sys.exit(0)
+    print("")
+    parser.print_help()
+    sys.exit(0)
 
 # load the object detection network
 net = jetson.inference.detectNet(opt.network, sys.argv, opt.threshold)
@@ -59,29 +59,29 @@ set_relay(relay_device, False, False)
 
 # process frames until the user exits
 while True:
-	# capture the next image
-	img = input.Capture()
+    # capture the next image
+    img = input.Capture()
 
-	# detect objects in the image (with overlay)
-	detections = net.Detect(img, overlay=opt.overlay)
+    # detect objects in the image (with overlay)
+    detections = net.Detect(img, overlay=opt.overlay)
 
-	# render the image
-	output.Render(img)
+    # render the image
+    output.Render(img)
 
-	ppl_count = sum(d.ClassID == PERSON_CLASS_ID for d in detections)
-	if LOWER_BOUND <= ppl_count <= UPPER_BOUND:
-		set_relay(relay_device, True, False)
-	elif ppl_count > UPPER_BOUND:
-		set_relay(relay_device, True, True)
-	else:
-		set_relay(relay_device, False, False)
+    ppl_count = sum(d.ClassID == PERSON_CLASS_ID for d in detections)
+    if LOWER_BOUND <= ppl_count <= UPPER_BOUND:
+        set_relay(relay_device, True, False)
+    elif ppl_count > UPPER_BOUND:
+        set_relay(relay_device, True, True)
+    else:
+        set_relay(relay_device, False, False)
 
-	# update the title bar
-	output.SetStatus("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
+    # update the title bar
+    output.SetStatus("{:s} | Network {:.0f} FPS".format(opt.network, net.GetNetworkFPS()))
 
-	# print out performance info
-	net.PrintProfilerTimes()
+    # print out performance info
+    net.PrintProfilerTimes()
 
-	# exit on input/output EOS
-	if not input.IsStreaming() or not output.IsStreaming():
-		break
+    # exit on input/output EOS
+    if not input.IsStreaming() or not output.IsStreaming():
+        break
