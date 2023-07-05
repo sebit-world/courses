@@ -15,9 +15,9 @@ def set_pin(device, pin, on, port=9600):
 
 if __name__ == "__main__":
     ports = ls_ports.comports()
-    for n in range(5):
-        for port in ports:
-            if port.location:
+    for port in ports:
+        if port.location:
+            for n in range(5):
                 set_pin(port.device, 1, on=True)
                 sleep(0.3)
                 set_pin(port.device, 2, on=True)
