@@ -1,9 +1,9 @@
- To install jtop
+# To install jtop
 
 ```sh
-sudo apt update
+sudo pip3 install -U jetson-stats
+sudo reboot
 
-sudo apt install python3-pip
-
-pip3 install --upgrade pip
+# AFTER REBOOT
+jtop
 ```
