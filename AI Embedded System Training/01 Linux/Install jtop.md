@@ -8,7 +8,7 @@ sudo pip3 install -U jetson-stats
 sudo reboot
 ```
 
-# Reboot
+# Launch jtop
 ```bash
 jtop
 ```
