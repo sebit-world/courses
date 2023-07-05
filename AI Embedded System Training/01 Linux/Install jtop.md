@@ -1,9 +1,11 @@
 # To install jtop
 
-```sh
+```bash
 sudo pip3 install -U jetson-stats
+
 sudo reboot
 
-# AFTER REBOOT
+## After reboot
 jtop
+
 ```
