@@ -2,10 +2,13 @@
 
 ```bash
 sudo pip3 install -U jetson-stats
+```
 
+```bash
 sudo reboot
+```
 
-## After reboot
+# Reboot
+```bash
 jtop
-
 ```
