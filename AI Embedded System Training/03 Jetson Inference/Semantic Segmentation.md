@@ -1,4 +1,4 @@
-# Semantic Segmentaion
+# Semantic Segmentation
 
 ```bash
 cd /jetson-inference/build/aarch64/bin
