@@ -6,6 +6,8 @@
 
 ```bash
 cd /jetson-inference/build/aarch64/bin
+```
 
+```bash
 ./detectnet.py --network=ssd-mobilenet-v2 /dev/video0
 ```
