@@ -9,7 +9,7 @@ cd /jetson-inference/tools/
 ```
 
 # The downloaded models are located at
+
 ```bash
 cd /jetson-inference/build/aarch64/bin/networks
 ```
-

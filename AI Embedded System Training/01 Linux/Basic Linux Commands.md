@@ -1,25 +1,28 @@
 ### Comment (#)
+
 ```bash
 # The content after '#' are called comments.
 # Comments are remarks for the reader and will not be executed
 ```
 
 ### Change directory(cd)
+
 ```bash
 # goto /home/nano
 cd /home/nano
 
 # goto /home/nano/Documents
-cd ~/Documents   
+cd ~/Documents
 
 # go up one level
 cd ..
 
-# goto previous directory 
+# goto previous directory
 cd -
 ```
 
 ### List (ls)
+
 ```bash
 # list the files in the current directory
 ls
@@ -27,14 +30,15 @@ ls
 # list in a long listing format
 ls -l
 
-# list all files including hidden files    
+# list all files including hidden files
 ls -la
 
 # list all files sizes in human readable formats
-ls -lah	
+ls -lah
 ```
 
 ### shutdown, poweroff, reboot
+
 ```bash
 sudo shutdown now           # shut down immediately
 sudo shutdown --halt 22:00  # halt the system at 10pm
@@ -42,15 +46,15 @@ sudo shutdown --halt +5     # halt the system after 5 mins delay
 sudo shutdown -c            # cancel a pending shutdown
 
 # shut down immediately
-sudo poweroff 
+sudo poweroff
 
 # Reboot
 sudo reboot
 
 ```
 
-
 ### Copy (cp) , Move (mv), Remove (rm), Make Directory (mkdir)
+
 ```bash
 # Copy file(s) into another directory
 cp filename.txt ~/Documents
@@ -83,6 +87,7 @@ rm -r directory_name
 ```
 
 ### Create file(touch), Concatenate file(cat)
+
 ```bash
 # Create an empty file
 touch hello_world.py
@@ -94,5 +99,3 @@ cat /var/log/syslog
 cat /var/log/syslog /var/log/syslog.1 > ~/combined.log
 
 ```
-
-

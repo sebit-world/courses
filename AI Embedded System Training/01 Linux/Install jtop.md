@@ -9,6 +9,7 @@ sudo reboot
 ```
 
 # Launch jtop
+
 ```bash
 jtop
 ```

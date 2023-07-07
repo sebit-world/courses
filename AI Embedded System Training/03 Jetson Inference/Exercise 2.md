@@ -2,7 +2,7 @@
 
 ## Sample Code
 
-Source code: https://github.com/sebit-world/jetson-inference/blob/training/data/codes/detectnet_relay.py
+Source code: [https://github.com/sebit-world/jetson-inference/blob/training/data/codes/detectnet_relay.py](https://github.com/sebit-world/jetson-inference/blob/training/data/codes/detectnet_relay.py)
 
 ```bash
 cd /jetson-inference/data/codes
