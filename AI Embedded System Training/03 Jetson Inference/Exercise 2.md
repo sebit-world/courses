@@ -14,8 +14,7 @@ python3 detectnet_relay.py --network=ssd-mobilenet-v2 /dev/video0
 
 ## Steps
 
-1. Open a new Terminal
-2. Create exercise2.py
+Open a new Terminal
 
 ```bash
 cd /home/nano/jetson-inference/data/codes/
@@ -25,7 +24,7 @@ cd /home/nano/jetson-inference/data/codes/
 gedit exercise2.py
 ```
 
-3. Switch to the docker terminal, run the exercise2.py
+Switch to the docker terminal, run the exercise2.py
 
 ```bash
 cd /jetson-inference/data/codes/
