@@ -1,6 +1,19 @@
 # Text editor (gedit)
 
-To edit your python code
+## Use terminal to set the correct TAB settings:
+```bash
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+```
+
+```bash
+gsettings set org.gnome.gedit.preferences.editor insert-spaces true
+```
+
+```bash
+gsettings set org.gnome.gedit.preferences.editor auto-indent true
+```
+
+## To edit your python code
 
 ```bash
 gedit hello_world.py
